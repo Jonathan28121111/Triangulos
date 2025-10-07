@@ -18,4 +18,10 @@ void main() {
     var t = Triangulo(3, 3, 4);
     return t.clasificar() == TipoTriangulo.isosceles;
   })) pasados++;
+
+    total++;
+  if (test('Triangulo escaleno (3,4,5)', () {
+    var t = Triangulo(3, 4, 5);
+    return t.clasificar() == TipoTriangulo.escaleno;
+  })) pasados++;
 }
