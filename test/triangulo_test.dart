@@ -12,4 +12,10 @@ void main() {
     var t = Triangulo(3, 3, 3);
     return t.clasificar() == TipoTriangulo.equilatero;
   })) pasados++;
+
+   total++;
+  if (test('Triangulo isosceles (3,3,4)', () {
+    var t = Triangulo(3, 3, 4);
+    return t.clasificar() == TipoTriangulo.isosceles;
+  })) pasados++;
 }
