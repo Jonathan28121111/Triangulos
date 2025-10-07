@@ -45,6 +45,37 @@ void main() {
   print('Tests fallados: ${total - pasados}');
 }
 
+bool test(String nombre, bool Function() testFn) {
+  try {
+    if (testFn()) {
+      print('[PASS] $nombre');
+      return true;
+    } else {
+      print('[FAIL] $nombre - Fallo la asercion');
+      return false;
+    }
+  } catch (e) {
+    print('[FAIL] $nombre - Error: $e');
+    return false;
+  }
+}
+
+bool testException(String nombre, Function testFn) {
+  try {
+    testFn();
+    print('[FAIL] $nombre - No lanzo excepcion');
+    return false;
+  } catch (e) {
+    if (e is TrianguloException) {
+      print('[PASS] $nombre');
+      return true;
+    } else {
+      print('[FAIL] $nombre - Excepcion incorrecta: $e');
+      return false;
+    }
+  }
+}
+
 
 
 
