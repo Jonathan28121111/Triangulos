@@ -24,4 +24,29 @@ void main() {
     var t = Triangulo(3, 4, 5);
     return t.clasificar() == TipoTriangulo.escaleno;
   })) pasados++;
+
+  total++;
+  if (testException('No es triangulo (1,2,10)', () {
+    Triangulo(1, 2, 10);
+  })) pasados++;
+  
+  total++;
+  if (testException('Lado cero (0,5,5)', () {
+    Triangulo(0, 5, 5);
+  })) pasados++;
+  
+  total++;
+  if (testException('Lado negativo (-1,5,5)', () {
+    Triangulo(-1, 5, 5);
+  })) pasados++;
+  
+  print('\nRESUMEN:');
+  print('Tests pasados: $pasados/$total');
+  print('Tests fallados: ${total - pasados}');
 }
+
+
+
+
+
+
