@@ -31,5 +31,15 @@ class Triangulo {
         lado2 + lado3 <= lado1) {
       throw TrianguloException('No cumple la desigualdad triangular');
     }
+  TipoTriangulo clasificar() {
+    if (lado1 == lado2 && lado2 == lado3) {
+      return TipoTriangulo.equilatero;
+    } else if (lado1 == lado2 || lado2 == lado3 || lado1 == lado3) {
+      return TipoTriangulo.isosceles;
+    } else {
+      return TipoTriangulo.escaleno;
+    }
+  }
+}
 
   }
